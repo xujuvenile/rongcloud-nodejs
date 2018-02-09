@@ -4,7 +4,7 @@
   "description": "RongCloud Node.js SDK (ES6/ES7)",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "standard && mocha"
   },
   "keywords": [
     "Rongcloud",
