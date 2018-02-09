@@ -70,3 +70,31 @@ rongCloud.user.getToken(config.user._id, config.user.name, config.user.portraitU
 - rollbackBlockUser  移除封禁聊天室成员
 - destroy  销毁聊天室
 - addWhiteListUser  添加聊天室白名单成员
+
+### Wordfilter
+
+- add  添加敏感词
+- delete  移除敏感词
+- getList  查询敏感词列表
+
+### Group
+
+- create  创建群组
+- sync  同步用户所属群组
+- refresh  刷新群组信息
+- join  将用户加入指定群组，用户将可以收到该群的消息，同一用户最多可加入 500 个群，每个群最大至 3000 人
+- queryUser  查询群成员
+- quit  退出群组
+- addGagUser  添加禁言群成员
+- lisGagUser  查询被禁言群成员
+- rollBackGagUser  移除禁言群成员
+- dismiss  解散群组。
+
+### Push
+- setUserPushTag  添加 Push 标签
+- broadcastPush  广播消息
+
+### SMS
+- getImageCode  获取图片验证码
+- sendCode  发送短信验证码
+- verifyCode  验证码验证
