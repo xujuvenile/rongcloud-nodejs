@@ -1,2 +1,2 @@
 # rongcloud-nodejs
-RongCloud Node.js SDK (async/await)
+RongCloud Node.js SDK (ES6/ES7)
