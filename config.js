@@ -6,5 +6,16 @@ module.exports = {
     _id: '1',
     name: 'User1',
     portraitUri: 'http://rongcloud.cn/images/logo.png'
-  }
+  },
+  chatroom: [
+    {
+      _id: '1',
+      name: 'Chatroomes1'
+    },
+    {
+      _id: '2',
+      name: 'Chatroomes2'
+    }
+  ]
+
 }
