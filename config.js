@@ -16,6 +16,10 @@ module.exports = {
       _id: '2',
       name: 'Chatroomes2'
     }
-  ]
+  ],
+  group: {
+    _id: '1',
+    name: 'Group1'
+  }
 
 }
