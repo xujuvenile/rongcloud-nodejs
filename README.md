@@ -63,7 +63,7 @@ rongCloud.user.getToken(config.user._id, config.user.name, config.user.portraitU
 - stopDistributionMessage  聊天室消息停止分发
 - resumeDistributionMessage  聊天室消息恢复分发
 - addGagUser  添加禁言聊天室成员
-- ListGagUser  查询被禁言聊天室成员
+- getGagUserList  查询被禁言聊天室成员
 - rollbackGagUser  移除禁言聊天室成员
 - addBlockUser  添加封禁聊天室成员
 - getListBlockUser  查询被封禁聊天室成员
