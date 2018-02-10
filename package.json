@@ -8,9 +8,12 @@
   },
   "keywords": [
     "Rongcloud",
+    "rongcloud",
+    "SDK",
     "Node.js"
   ],
-  "author": "xuxinwen",
+  "homepage":"https://github.com/xujuvenile/rongcloud-nodejs-sdk",
+  "author": "xuxinwen <xu.juvenile@gmail.com> (https://github.com/xujuvenile)",
   "license": "MIT",
   "devDependencies": {
     "debug": "^3.1.0",
