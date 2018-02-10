@@ -99,7 +99,7 @@ rongCloud.user.getToken(config.user._id, config.user.name, config.user.portraitU
 - rollBackGagUser  移除禁言群成员
 - dismiss  解散群组。
 
-## Sensitiveword (old version: Wordfilter) TODO
+## Sensitiveword (old version: Wordfilter)
 
 - add  添加敏感词
 - remove  移除敏感词
