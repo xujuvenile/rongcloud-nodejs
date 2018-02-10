@@ -94,7 +94,6 @@ describe('Chatroom', () => {
         let data = await rongCloud.chatroom.addBanUser('1', 1)
 
         if (data.code) {
-          console.log('data.code', data.code)
           assert.equal(data.code, 200)
         }
       } catch (err) {
@@ -108,7 +107,6 @@ describe('Chatroom', () => {
         let data = await rongCloud.chatroom.queryBanUser()
 
         if (data.code) {
-          console.log('data.code', data.code)
           assert.equal(data.code, 200)
         }
       } catch (err) {
@@ -122,7 +120,6 @@ describe('Chatroom', () => {
         let data = await rongCloud.chatroom.removeBanUser('1')
 
         if (data.code) {
-          console.log('data.code', data.code)
           assert.equal(data.code, 200)
         }
       } catch (err) {
@@ -215,7 +212,6 @@ describe('Chatroom', () => {
         let data = await rongCloud.chatroom.addKeepalive('1')
 
         if (data.code) {
-          console.log('data.code', data.code)
           assert.equal(data.code, 200)
         }
       } catch (err) {
@@ -229,7 +225,6 @@ describe('Chatroom', () => {
         let data = await rongCloud.chatroom.queryKeepalive()
 
         if (data.code) {
-          console.log('data.code', data.code)
           assert.equal(data.code, 200)
         }
       } catch (err) {
@@ -243,7 +238,6 @@ describe('Chatroom', () => {
         let data = await rongCloud.chatroom.removeKeepalive('1')
 
         if (data.code) {
-          console.log('data.code', data.code)
           assert.equal(data.code, 200)
         }
       } catch (err) {
