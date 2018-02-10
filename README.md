@@ -5,6 +5,15 @@
 
 RongCloud Node.js SDK (ES6/ES7)
 
+Full support [RongCloud](http://www.rongcloud.cn/docs/server.html) official website documentation on the interface.
+
+Delightful API. You can choose domestic or foreign host.
+
+Friendly support Node.js LTS(8.9.4+) 
+
+>Async/Await - The Modern Javascript Tutorial :)
+
+
 ## Config
 
 ### appKey
