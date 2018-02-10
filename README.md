@@ -95,7 +95,7 @@ rongCloud.user.getToken(config.user._id, config.user.name, config.user.portraitU
 - queryUser  查询群成员
 - quit  退出群组
 - addGagUser  添加禁言群成员
-- lisGagUser  查询被禁言群成员
+- getGagUserList  查询被禁言群成员
 - rollBackGagUser  移除禁言群成员
 - dismiss  解散群组。
 
