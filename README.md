@@ -86,7 +86,7 @@ rongCloud.user.getToken(config.user._id, config.user.name, config.user.portraitU
 - deleteMessage  消息历史记录删除
 
 
-## Group TODO
+## Group
 
 - create  创建群组
 - sync  同步用户所属群组
