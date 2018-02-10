@@ -142,4 +142,18 @@ describe('Chatroom', () => {
       assert.equal(data.code, 200)
     })
   })
+
+  describe('queryWhiteListUser', () => {
+    it('should success', async () => {
+      let data = await rongCloud.chatroom.queryWhiteListUser('1')
+      assert.equal(data.code, 200)
+    })
+  })
+
+  describe('removeWhiteListUser', () => {
+    it('should success', async () => {
+      let data = await rongCloud.chatroom.removeWhiteListUser('1', '1')
+      assert.equal(data.code, 200)
+    })
+  })
 })
