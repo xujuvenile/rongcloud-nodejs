@@ -63,7 +63,7 @@ rongCloud.user.getToken(config.user._id, config.user.name, config.user.portraitU
 - stopDistributionMessage  聊天室消息停止分发
 - resumeDistributionMessage  聊天室消息恢复分发
 - addGagUser  添加禁言聊天室成员
-- ListGagUser  查询被禁言聊天室成员
+- getGagUserList  查询被禁言聊天室成员
 - rollbackGagUser  移除禁言聊天室成员
 - addBlockUser  添加封禁聊天室成员
 - getListBlockUser  查询被封禁聊天室成员
@@ -71,13 +71,22 @@ rongCloud.user.getToken(config.user._id, config.user.name, config.user.portraitU
 - destroy  销毁聊天室
 - addWhiteListUser  添加聊天室白名单成员
 
-### Wordfilter
 
-- add  添加敏感词
-- delete  移除敏感词
-- getList  查询敏感词列表
+## Message
 
-### Group
+- publishPrivate  发送单聊消息
+- publishTemplate  发送单聊模板消息
+- PublishSystem  发送系统消息
+- publishSystemTemplate  发送系统模板消息
+- publishGroup  发送群组消息
+- publishDiscussion  发送讨论组消息
+- publishChatroom  发送聊天室消息
+- broadcast  发送广播消息
+- getHistory  消息历史记录下载地址获取 消息历史记录下载地址获取。获取 APP 内指定某天某小时内的所有会话消息记录的下载地址
+- deleteMessage  消息历史记录删除
+
+
+## Group TODO
 
 - create  创建群组
 - sync  同步用户所属群组
@@ -90,11 +99,19 @@ rongCloud.user.getToken(config.user._id, config.user.name, config.user.portraitU
 - rollBackGagUser  移除禁言群成员
 - dismiss  解散群组。
 
-### Push
+## Wordfilter TODO
+
+- add  添加敏感词
+- delete  移除敏感词
+- getList  查询敏感词列表
+
+## Push TODO
+
 - setUserPushTag  添加 Push 标签
 - broadcastPush  广播消息
 
-### SMS
+## SMS TODO
+
 - getImageCode  获取图片验证码
 - sendCode  发送短信验证码
 - verifyCode  验证码验证
