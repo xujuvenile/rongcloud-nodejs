@@ -109,6 +109,21 @@ describe('Chatroom', () => {
     })
   })
 
+  describe('queryPriority', () => {
+    it('should success', async () => {
+      let data = await rongCloud.chatroom.queryPriority()
+      assert.equal(data.code, 200)
+    })
+  })
+
+  describe('removePriority', () => {
+    it('should success', async () => {
+      let chatroomAddPriorityObjectName = ['RC:VcMsg', 'RC:ImgTextMsg', 'RC:ImgMsg']
+      let data = await rongCloud.chatroom.removePriority(chatroomAddPriorityObjectName)
+      assert.equal(data.code, 200)
+    })
+  })
+
   describe('destroy', () => {
     it('destroy string should success', async () => {
       let data = await rongCloud.chatroom.destroy('1')

@@ -70,6 +70,9 @@ rongCloud.user.getToken(config.user._id, config.user.name, config.user.portraitU
 - rollbackBlockUser  移除封禁聊天室成员
 - destroy  销毁聊天室
 - addWhiteListUser  添加聊天室白名单成员
+- addPriority  添加聊天室消息优先级
+- removePriority 移除聊天室消息优先级
+- queryPriority  查询聊天室消息优先级
 
 
 ## Message
