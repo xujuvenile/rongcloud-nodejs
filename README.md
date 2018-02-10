@@ -56,25 +56,65 @@ rongCloud.user.getToken(config.user._id, config.user.name, config.user.portraitU
 
 ## Chatroom
 
+### 聊天室服务
+
 - create  创建聊天室
 - join  加入聊天室
 - query  查询聊天室信息
+- destroy  销毁聊天室
 - queryUser  查询聊天室内用户
-- stopDistributionMessage  聊天室消息停止分发
-- resumeDistributionMessage  聊天室消息恢复分发
+- queryUserExist  查询用户是否在聊天室
+- queryUsersExist  批量查询用户是否在聊天室，每次最多不超过 1000 个用户 ID
+
+### 聊天室成员禁言服务
+
 - addGagUser  添加禁言聊天室成员
-- getGagUserList  查询被禁言聊天室成员
 - rollbackGagUser  移除禁言聊天室成员
+- getGagUserList  查询被禁言聊天室成员
+
+### 聊天室全局禁言
+
+- addBanUser 添加聊天室全局禁言方法
+- removeBanUser 移除聊天室全局禁言方法
+- queryBanUser 查询聊天室全局禁言方法
+
+
+### 聊天室封禁服务
+
 - addBlockUser  添加封禁聊天室成员
 - getListBlockUser  查询被封禁聊天室成员
 - rollbackBlockUser  移除封禁聊天室成员
-- destroy  销毁聊天室
-- addWhiteListUser  添加聊天室白名单成员
-- removeWhiteListUser  移除聊天室白名单成员
-- queryWhiteListUser  查询聊天室白名单成员
+
+
+### 聊天室消息分发服务
+
+- stopDistributionMessage  聊天室消息停止分发
+- resumeDistributionMessage  聊天室消息恢复分发
+
+### 聊天室消息优先级服务
+
 - addPriority  添加聊天室消息优先级
 - removePriority 移除聊天室消息优先级
 - queryPriority  查询聊天室消息优先级
+
+### 聊天室消息白名单服务
+
+- addWhiteList  添加聊天室白名单成员
+- removeWhiteList  移除聊天室白名单成员
+- queryWhiteList  查询聊天室白名单成员
+
+
+### 聊天室用户白名单服务
+
+- addWhiteListUser  添加聊天室白名单成员
+- removeWhiteListUser  移除聊天室白名单成员
+- queryWhiteListUser  查询聊天室白名单成员
+
+### 聊天室保活服务
+
+- addKeepalive 添加保活聊天室方法
+- removeKeepalive 添加保活聊天室方法
+- queryKeepalive 添加保活聊天室方法
 
 ```js
 rongCloud.chatroom.create([{id:'ChatroomId1', name:'ChatroomName1'},{id:'ChatroomId2', name:'ChatroomName2'}]).then(val=>{

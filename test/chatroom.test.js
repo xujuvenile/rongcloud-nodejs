@@ -45,81 +45,16 @@ describe('Chatroom', () => {
     })
   })
 
-  describe('addGagUser', () => {
+  describe('queryUserExist', () => {
     it('should success', async () => {
-      let data = await rongCloud.chatroom.addGagUser('1', '1', 1)
+      let data = await rongCloud.chatroom.queryUserExist('1', '1')
       assert.equal(data.code, 200)
     })
   })
 
-  describe('rollbackGagUser', () => {
+  describe('queryUsersExist', () => {
     it('should success', async () => {
-      let data = await rongCloud.chatroom.rollbackGagUser('1', '1')
-      assert.equal(data.code, 200)
-    })
-  })
-
-  describe('getGagUserList', () => {
-    it('should success', async () => {
-      let data = await rongCloud.chatroom.getGagUserList('1')
-      assert.equal(data.code, 200)
-    })
-  })
-
-  describe('addBlockUser', () => {
-    it('should success', async () => {
-      let data = await rongCloud.chatroom.addBlockUser('1', '1', 1)
-      assert.equal(data.code, 200)
-    })
-  })
-
-  describe('rollbackBlockUser', () => {
-    it('should success', async () => {
-      let data = await rongCloud.chatroom.rollbackBlockUser('1', '1')
-      assert.equal(data.code, 200)
-    })
-  })
-
-  describe('getListBlockUser', () => {
-    it('should success', async () => {
-      let data = await rongCloud.chatroom.getListBlockUser('1')
-      assert.equal(data.code, 200)
-    })
-  })
-
-  describe('stopDistributionMessage', () => {
-    it('should success', async () => {
-      let data = await rongCloud.chatroom.stopDistributionMessage('1')
-      assert.equal(data.code, 200)
-    })
-  })
-
-  describe('resumeDistributionMessage', () => {
-    it('should success', async () => {
-      let data = await rongCloud.chatroom.resumeDistributionMessage('1')
-      assert.equal(data.code, 200)
-    })
-  })
-
-  describe('addPriority', () => {
-    it('should success', async () => {
-      let chatroomAddPriorityObjectName = ['RC:VcMsg', 'RC:ImgTextMsg', 'RC:ImgMsg']
-      let data = await rongCloud.chatroom.addPriority(chatroomAddPriorityObjectName)
-      assert.equal(data.code, 200)
-    })
-  })
-
-  describe('queryPriority', () => {
-    it('should success', async () => {
-      let data = await rongCloud.chatroom.queryPriority()
-      assert.equal(data.code, 200)
-    })
-  })
-
-  describe('removePriority', () => {
-    it('should success', async () => {
-      let chatroomAddPriorityObjectName = ['RC:VcMsg', 'RC:ImgTextMsg', 'RC:ImgMsg']
-      let data = await rongCloud.chatroom.removePriority(chatroomAddPriorityObjectName)
+      let data = await rongCloud.chatroom.queryUsersExist('1', ['1', '2'])
       assert.equal(data.code, 200)
     })
   })
@@ -136,24 +71,185 @@ describe('Chatroom', () => {
     })
   })
 
-  describe('addWhiteListUser', () => {
-    it('should success', async () => {
+  describe('user gag', () => {
+    it('add should success', async () => {
+      let data = await rongCloud.chatroom.addGagUser('1', '1', 1)
+      assert.equal(data.code, 200)
+    })
+
+    it('rollback should success', async () => {
+      let data = await rongCloud.chatroom.rollbackGagUser('1', '1')
+      assert.equal(data.code, 200)
+    })
+
+    it('getList should success', async () => {
+      let data = await rongCloud.chatroom.getGagUserList('1')
+      assert.equal(data.code, 200)
+    })
+  })
+
+  describe('user ban', () => {
+    it('add should success', async () => {
+      try {
+        let data = await rongCloud.chatroom.addBanUser('1', 1)
+
+        if (data.code) {
+          console.log('data.code', data.code)
+          assert.equal(data.code, 200)
+        }
+      } catch (err) {
+        // 1009 '专有云聊天室全局禁言功能未开通。'
+        assert.equal(err.error.code, 1009)
+      }
+    })
+
+    it('query should success', async () => {
+      try {
+        let data = await rongCloud.chatroom.queryBanUser()
+
+        if (data.code) {
+          console.log('data.code', data.code)
+          assert.equal(data.code, 200)
+        }
+      } catch (err) {
+        // 1009 '专有云聊天室全局禁言功能未开通。'
+        assert.equal(err.error.code, 1009)
+      }
+    })
+
+    it('remove should success', async () => {
+      try {
+        let data = await rongCloud.chatroom.removeBanUser('1')
+
+        if (data.code) {
+          console.log('data.code', data.code)
+          assert.equal(data.code, 200)
+        }
+      } catch (err) {
+        // 1009 '专有云聊天室全局禁言功能未开通。'
+        assert.equal(err.error.code, 1009)
+      }
+    })
+  })
+
+  describe('user block', () => {
+    it('add should success', async () => {
+      let data = await rongCloud.chatroom.addBlockUser('1', '1', 1)
+      assert.equal(data.code, 200)
+    })
+
+    it('rollback should success', async () => {
+      let data = await rongCloud.chatroom.rollbackBlockUser('1', '1')
+      assert.equal(data.code, 200)
+    })
+
+    it('getList should success', async () => {
+      let data = await rongCloud.chatroom.getListBlockUser('1')
+      assert.equal(data.code, 200)
+    })
+  })
+
+  describe('message distribution', () => {
+    it('stop should success', async () => {
+      let data = await rongCloud.chatroom.stopDistributionMessage('1')
+      assert.equal(data.code, 200)
+    })
+
+    it('resume should success', async () => {
+      let data = await rongCloud.chatroom.resumeDistributionMessage('1')
+      assert.equal(data.code, 200)
+    })
+  })
+
+  describe('priority', () => {
+    it('add should success', async () => {
+      let chatroomAddPriorityObjectName = ['RC:VcMsg', 'RC:ImgTextMsg', 'RC:ImgMsg']
+      let data = await rongCloud.chatroom.addPriority(chatroomAddPriorityObjectName)
+      assert.equal(data.code, 200)
+    })
+    it('query should success', async () => {
+      let data = await rongCloud.chatroom.queryPriority()
+      assert.equal(data.code, 200)
+    })
+
+    it('remove should success', async () => {
+      let chatroomAddPriorityObjectName = ['RC:VcMsg', 'RC:ImgTextMsg', 'RC:ImgMsg']
+      let data = await rongCloud.chatroom.removePriority(chatroomAddPriorityObjectName)
+      assert.equal(data.code, 200)
+    })
+  })
+
+  describe('user whiteList', () => {
+    it('add should success', async () => {
       let data = await rongCloud.chatroom.addWhiteListUser('1', ['1', '2'])
       assert.equal(data.code, 200)
     })
-  })
-
-  describe('queryWhiteListUser', () => {
-    it('should success', async () => {
+    it('query should success', async () => {
       let data = await rongCloud.chatroom.queryWhiteListUser('1')
+      assert.equal(data.code, 200)
+    })
+    it('remove should success', async () => {
+      let data = await rongCloud.chatroom.removeWhiteListUser('1', '1')
       assert.equal(data.code, 200)
     })
   })
 
-  describe('removeWhiteListUser', () => {
-    it('should success', async () => {
-      let data = await rongCloud.chatroom.removeWhiteListUser('1', '1')
+  describe('whiteList', () => {
+    it('add should success', async () => {
+      let data = await rongCloud.chatroom.addWhiteList('RC:VcMsg')
       assert.equal(data.code, 200)
+    })
+    it('query should success', async () => {
+      let data = await rongCloud.chatroom.queryWhiteList()
+      assert.equal(data.code, 200)
+    })
+    it('remove should success', async () => {
+      let data = await rongCloud.chatroom.removeWhiteList('RC:VcMsg')
+      assert.equal(data.code, 200)
+    })
+  })
+
+  describe('keepalive', () => {
+    it('add should success', async () => {
+      try {
+        let data = await rongCloud.chatroom.addKeepalive('1')
+
+        if (data.code) {
+          console.log('data.code', data.code)
+          assert.equal(data.code, 200)
+        }
+      } catch (err) {
+        // 1009 '专有云聊天室全局禁言功能未开通。'
+        assert.equal(err.error.code, 1009)
+      }
+    })
+
+    it('query should success', async () => {
+      try {
+        let data = await rongCloud.chatroom.queryKeepalive()
+
+        if (data.code) {
+          console.log('data.code', data.code)
+          assert.equal(data.code, 200)
+        }
+      } catch (err) {
+        // 1009 '专有云聊天室全局禁言功能未开通。'
+        assert.equal(err.error.code, 1009)
+      }
+    })
+
+    it('remove should success', async () => {
+      try {
+        let data = await rongCloud.chatroom.removeKeepalive('1')
+
+        if (data.code) {
+          console.log('data.code', data.code)
+          assert.equal(data.code, 200)
+        }
+      } catch (err) {
+        // 1009 '专有云聊天室全局禁言功能未开通。'
+        assert.equal(err.error.code, 1009)
+      }
     })
   })
 })
