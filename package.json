@@ -1,6 +1,6 @@
 {
   "name": "rongcloud-nodejs",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "RongCloud Node.js SDK (ES6/ES7)",
   "main": "index.js",
   "scripts": {
